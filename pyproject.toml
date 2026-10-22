@@ -1,0 +1,61 @@
+[project]
+name = "financial-rag-system"
+version = "0.1.0"
+description = "Production-grade Financial RAG pipeline with hybrid retrieval, reranking, and RAGAS evaluation"
+requires-python = ">=3.12"
+
+dependencies = [
+    # LangChain stack
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-huggingface>=0.1.0",
+    "langchain-chroma>=0.1.0",
+    "langchain-text-splitters>=0.3.0",
+    "langchain-groq>=0.2.0",
+    "langchain-openai>=0.3.0",
+    "langchain-ollama>=0.2.0",
+
+    # Embeddings & reranking
+    "sentence-transformers>=3.0.0",
+    "torch>=2.0.0",
+
+    # Sparse retrieval
+    "rank-bm25>=0.2.2",
+    "nltk>=3.9.0",
+
+    # Vector store
+    "chromadb>=0.5.0",
+
+    # Evaluation
+    "ragas>=0.4.0",
+    "matplotlib>=3.9.0",
+
+    # Data & utilities
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "tqdm>=4.66.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+
+    # MCP server (Week 4)
+    "mcp[cli]>=1.9.1",
+    "fastmcp>=2.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["finrag"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+]

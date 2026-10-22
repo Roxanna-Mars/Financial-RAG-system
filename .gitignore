@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+temp.py
+
+# Environments
+.venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vector store cache (can be rebuilt from corpus)
+chroma_stores/
+
+# Generated outputs
+results/
+*.csv
+!sample_submission_.csv
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.pid
